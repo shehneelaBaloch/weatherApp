@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f0f4f8;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.weather-container {
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Weather Side */
+.weather-side {
+  position: relative;
+  flex: 2;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url("https://images.unsplash.com/photo-1559963110-71b394e7494d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=400");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 20px;
+}
+
+.weather-gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+}
+
+.date-container {
+  margin-top: 10px;
+}
+
+.date-dayname {
+  margin-bottom: 5px;
+}
+
+.date-day {
+  margin-bottom: 5px;
+}
+
+.location {
+  margin-left: 5px;
+}
+
+.weather-info {
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+}
+
+.weather-temp {
+  font-size: 3em;
+  margin: 0;
+}
+
+.weather-desc {
+  margin: 0;
+}
+
+/* Info Side */
+.info-side {
+  flex: 2;
+  background: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.location-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.location-button {
+  padding: 10px;
+  background: #5151E5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.location-button:hover {
+  background: #4545b1;
+}
+
+.today-info {
+  margin-top: 20px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .weather-container {
+    flex-direction: column; /* Stack the weather and info sections */
+    max-width: 100%;
+  }
+
+  .app-title {
+    font-size: 2rem; /* Adjust the title size */
+  }
+
+  .weather-side {
+    background-size: cover;
+    padding: 15px;
+    flex: none;
+    height: 300px;
+  }
+
+  .info-side {
+    padding: 20px;
+  }
+
+  .weather-temp {
+    font-size: 2.5em;
+  }
+
+  .location-button {
+    padding: 8px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.75rem; /* Further reduce title size on smaller screens */
+  }
+
+  .weather-temp {
+    font-size: 2em;
+  }
+
+  .info-side {
+    padding: 15px;
+  }
+
+  .location-input, .location-button {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 600px) {
+  .weather-container {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .weather-side, .info-side {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .weather-temp {
+    font-size: 2rem;
+  }
+
+  .location-input, .location-button {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .app-title {
+    font-size: 1.5rem;
+  }
+}
